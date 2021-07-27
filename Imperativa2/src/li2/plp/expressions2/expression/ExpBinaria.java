@@ -116,6 +116,13 @@ public abstract class ExpBinaria implements Expressao {
 		
 		return this;
 	}
+
+	public String mutate(AmbienteExecucao ambiente)
+			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		String a = "1" + this.getOperador() + "2";
+		System.out.println(a);
+		return a;
+	}
 	
 	public abstract ExpBinaria clone();
 }

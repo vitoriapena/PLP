@@ -108,6 +108,23 @@ public class MultiInterpretador {
 
 	}
 
+	public void mutarCodigo(String sourceCode, String listaEntrada, int selectedIndex) {
+		messageBoard.append("Mutante! \n");
+		messageBoard.append(sourceCode);
+
+//		try {
+//			ByteArrayInputStream fis = new ByteArrayInputStream(sourceCode.getBytes());
+//			mutarImp2(fis, listaEntrada);
+//
+//		} catch (Exception e1) {
+//			messageBoard.setText(e1.getMessage());
+//			e1.printStackTrace();
+//		} catch (Throwable t) {
+//			messageBoard.setText(t.getMessage());
+//			t.printStackTrace();
+//		}
+	}
+
 	private void interpretarExp1(InputStream fis) throws ParseException {
 		le1.plp.expressions1.Programa prog;
 		if (exp1Parser == null) {
@@ -228,6 +245,28 @@ public class MultiInterpretador {
 			messageBoard.append("erro de tipos!");
 		}
 	}
+
+//	private void mutarImp2(InputStream fis, String entradaStr)
+//			throws Exception {
+//		li2.plp.imperative2.Programa prog;
+//		if (imp2Parser == null) {
+//			imp2Parser = new Imp2Parser(fis);
+//		} else {
+//			Imp2Parser.ReInit(fis);
+//		}
+//
+//		prog = Imp2Parser.Input();
+//
+//		messageBoard.setText("sintaxe verificada com sucesso!\n");
+//		li2.plp.imperative1.memory.ListaValor entrada = obterListaEntradaImp2(entradaStr);
+//		if (prog.checaTipo(new li2.plp.imperative1.memory.ContextoCompilacaoImperativa(entrada))) {
+//			messageBoard.append("mutante = "
+//					+ prog.mutar(new li2.plp.imperative2.memory.ContextoExecucaoImperativa2(entrada))
+//					.toString());
+//		} else {
+//			messageBoard.append("erro de tipos!");
+//		}
+//	}
 
 	private void interpretarOO1(InputStream fis, String entradaStr)
 			throws Exception {

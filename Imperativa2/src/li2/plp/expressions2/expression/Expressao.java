@@ -43,6 +43,13 @@ public interface Expressao {
 	Expressao reduzir(AmbienteExecucao ambiente);
 
 	/**
+	 * Mutation
+	 * @param ambiente
+	 * @return Expressão mutada
+	 */
+	 //Expressao mutate(AmbienteExecucao ambiente) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException;
+
+	/**
 	 * 
 	 * @return
 	 */

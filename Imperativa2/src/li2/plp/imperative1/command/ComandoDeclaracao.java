@@ -40,6 +40,27 @@ public class ComandoDeclaracao implements Comando {
 		return ambiente;
 	}
 
+//	/**
+//	 * Declara a(s) vari�vel(is) e executa o comando.
+//	 *
+//	 * @param ambiente
+//	 *            o ambiente que contem o mapeamento entre identificadores e
+//	 *            valores.
+//	 *
+//	 * @return o ambiente modificado pela execu��o da declara��o e do comando.
+//	 * @throws ErroTipoEntradaException
+//	 *
+//	 */
+//	public AmbienteExecucaoImperativa mutar(
+//			AmbienteExecucaoImperativa ambiente)
+//			throws IdentificadorJaDeclaradoException,
+//			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+//		ambiente.incrementa();
+//		ambiente = comando.mutar(declaracao.elabora(ambiente));
+//		ambiente.restaura();
+//		return ambiente;
+//	}
+
 	/**
 	 * Verifica se o tipo do comando esta correto, levando em conta que o tipo
 	 * de uma variavel � o tipo do valor da sua primeira atribuicao.
