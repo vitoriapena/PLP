@@ -17,6 +17,11 @@ public interface Expressao {
 	Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException;
 
 	/**
+	 * Avalia a expressao mutada retornando seu Valor.
+	 */
+	Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException;
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param amb o ambiente que contem o mapeamento entre identificadores

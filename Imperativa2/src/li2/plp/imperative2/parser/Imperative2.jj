@@ -533,6 +533,10 @@ Expressao PExpBinaria() :
 		    retorno = PExpMaiorQue()
 		| LOOKAHEAD(PExpPrimaria() <LT>)
         	retorno = PExpMenorQue()
+        | LOOKAHEAD(PExpPrimaria() <GE>)
+            retorno = PExpMaiorIgualQue()
+        | LOOKAHEAD(PExpPrimaria() <LE>)
+            retorno = PExpMenorIgualQue()
     )
 	{
 		return retorno;
@@ -638,6 +642,30 @@ ExpMenorQue PExpMenorQue() :
 	{return new ExpMenorQue(esq, dir);}
 }
 
+ExpMaiorIgualQue PExpMaiorIgualQue() :
+{
+	Expressao esq;
+	Expressao dir;
+}
+{
+	esq = PExpPrimaria()
+	<GE>
+	dir = PExpressao()
+	{return new ExpMaiorIgualQue(esq, dir);}
+}
+
+ExpMenorIgualQue PExpMenorIgualQue() :
+{
+	Expressao esq;
+	Expressao dir;
+}
+{
+	esq = PExpPrimaria()
+	<LE>
+	dir = PExpressao()
+	{return new ExpMenorIgualQue(esq, dir);}
+}
+
 Expressao PExpressao() :
 {
 	Expressao retorno;
@@ -646,7 +674,7 @@ Expressao PExpressao() :
 	(
 	    LOOKAHEAD (2) 
 	  		retorno = PExpUnaria()
-	  | LOOKAHEAD (PExpPrimaria() (<OR> | <AND> | <MINUS> | <PLUS> | <EQ> | <CONCAT> | <GT> | <LT>))
+	  | LOOKAHEAD (PExpPrimaria() (<OR> | <AND> | <MINUS> | <PLUS> | <EQ> | <CONCAT> | <GT> | <LT> | <GE> | <LE>))
 	  		retorno = PExpBinaria()
 	  |
 	    retorno = PExpPrimaria()

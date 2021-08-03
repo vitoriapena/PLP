@@ -29,19 +29,19 @@ public interface Comando {
 			throws IdentificadorJaDeclaradoException,
 			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException;
 
-//	/**
-//	 * Muta este comando.
-//	 *
-//	 * @param ambiente
-//	 *            o ambiente que contem o mapeamento entre identificadores e
-//	 *            valores.
-//	 *
-//	 * @return o ambiente depois da operação de mutação.
-//	 * @throws ErroTipoEntradaException
-//	 */
-//	AmbienteExecucaoImperativa mutar(AmbienteExecucaoImperativa ambiente)
-//			throws IdentificadorJaDeclaradoException,
-//			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException;
+	/**
+	 * Muta este comando.
+	 *
+	 * @param ambiente
+	 *            o ambiente que contem o mapeamento entre identificadores e
+	 *            valores.
+	 *
+	 * @return o ambiente depois da operação de mutação.
+	 * @throws ErroTipoEntradaException
+	 */
+	AmbienteExecucaoImperativa mutar(AmbienteExecucaoImperativa ambiente)
+			throws IdentificadorJaDeclaradoException,
+			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException;
 
 
 

@@ -109,20 +109,64 @@ public class MultiInterpretador {
 	}
 
 	public void mutarCodigo(String sourceCode, String listaEntrada, int selectedIndex) {
-		messageBoard.append("Mutante! \n");
-		messageBoard.append(sourceCode);
+		messageBoard.append("Executando código mutante! \n");
+		try {
+			ByteArrayInputStream fis = new ByteArrayInputStream(sourceCode.getBytes());
 
-//		try {
-//			ByteArrayInputStream fis = new ByteArrayInputStream(sourceCode.getBytes());
-//			mutarImp2(fis, listaEntrada);
-//
-//		} catch (Exception e1) {
-//			messageBoard.setText(e1.getMessage());
-//			e1.printStackTrace();
-//		} catch (Throwable t) {
-//			messageBoard.setText(t.getMessage());
-//			t.printStackTrace();
-//		}
+
+			switch (selectedIndex) {
+				case EXP1:
+					interpretarExp1(fis);
+					break;
+				case EXP2:
+					interpretarExp2(fis);
+					break;
+				case FUNC1:
+					interpretarFunc1(fis);
+					break;
+				case FUNC2:
+					interpretarFunc2(fis);
+					break;
+				case FUNC3:
+					interpretarFunc3(fis);
+					break;
+				case IMP1:
+					interpretarImp1(fis, listaEntrada);
+					break;
+				case IMP2:
+					mutarImp2(fis, listaEntrada);
+					break;
+				case OO1:
+					interpretarOO1(fis, listaEntrada);
+					break;
+				case OO2:
+					interpretarOO2(fis, listaEntrada);
+			}
+
+
+//			switch (listaEntrada) {
+//				case ">":
+//					sourceCode = sourceCode.replaceAll(">","<");
+//					break;
+//				case "<":
+//					sourceCode = sourceCode.replaceAll("<",">");
+//					break;
+//				case "<=":
+//					sourceCode = sourceCode.replaceAll("<=",">=");
+//					break;
+//				case ">=":
+//					sourceCode = sourceCode.replaceAll(">=","<=");
+//			}
+
+		} catch (Exception e1) {
+			messageBoard.setText(e1.getMessage());
+			e1.printStackTrace();
+		} catch (Throwable t) {
+			messageBoard.setText(t.getMessage());
+			t.printStackTrace();
+		}
+
+		messageBoard.append(sourceCode);
 	}
 
 	private void interpretarExp1(InputStream fis) throws ParseException {
@@ -246,27 +290,27 @@ public class MultiInterpretador {
 		}
 	}
 
-//	private void mutarImp2(InputStream fis, String entradaStr)
-//			throws Exception {
-//		li2.plp.imperative2.Programa prog;
-//		if (imp2Parser == null) {
-//			imp2Parser = new Imp2Parser(fis);
-//		} else {
-//			Imp2Parser.ReInit(fis);
-//		}
-//
-//		prog = Imp2Parser.Input();
-//
-//		messageBoard.setText("sintaxe verificada com sucesso!\n");
-//		li2.plp.imperative1.memory.ListaValor entrada = obterListaEntradaImp2(entradaStr);
-//		if (prog.checaTipo(new li2.plp.imperative1.memory.ContextoCompilacaoImperativa(entrada))) {
-//			messageBoard.append("mutante = "
-//					+ prog.mutar(new li2.plp.imperative2.memory.ContextoExecucaoImperativa2(entrada))
-//					.toString());
-//		} else {
-//			messageBoard.append("erro de tipos!");
-//		}
-//	}
+	private void mutarImp2(InputStream fis, String entradaStr)
+			throws Exception {
+		li2.plp.imperative2.Programa prog;
+		if (imp2Parser == null) {
+			imp2Parser = new Imp2Parser(fis);
+		} else {
+			Imp2Parser.ReInit(fis);
+		}
+
+		prog = Imp2Parser.Input();
+
+		messageBoard.setText("sintaxe verificada com sucesso!\n");
+		li2.plp.imperative1.memory.ListaValor entrada = obterListaEntradaImp2(entradaStr);
+		if (prog.checaTipo(new li2.plp.imperative1.memory.ContextoCompilacaoImperativa(entrada))) {
+			messageBoard.append("resultado com mutante = "
+					+ prog.mutar(new li2.plp.imperative2.memory.ContextoExecucaoImperativa2(entrada))
+					.toString());
+		} else {
+			messageBoard.append("erro de tipos!");
+		}
+	}
 
 	private void interpretarOO1(InputStream fis, String entradaStr)
 			throws Exception {

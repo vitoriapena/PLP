@@ -46,6 +46,27 @@ public class IfThenElse implements Comando {
 	}
 
 	/**
+	 * Implementa o comando <code>if then else</code>.
+	 *
+	 * @param ambiente
+	 *            o ambiente de mutacao.
+	 *
+	 * @return o ambiente depois de modificado pela mutacao do comando
+	 *         <code>if then else</code>.
+	 * @throws ErroTipoEntradaException
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws IdentificadorJaDeclaradoException,
+			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+		if (((ValorBooleano) expressao.avaliarMutante(ambiente)).valor())
+			return comandoThen.mutar(ambiente);
+		else
+			return comandoElse.mutar(ambiente);
+	}
+
+	/**
 	 * Realiza a verificacao de tipos da express�o e dos comandos do comando
 	 * <code>if then else</code>
 	 * 

@@ -7,30 +7,30 @@ import li2.plp.expressions2.memory.AmbienteExecucao;
 import li2.plp.expressions2.memory.VariavelJaDeclaradaException;
 import li2.plp.expressions2.memory.VariavelNaoDeclaradaException;
 
-public class ExpMenorQue extends ExpBinaria {
+public class ExpMaiorIgualQue extends ExpBinaria {
 
-	public ExpMenorQue(Expressao esq, Expressao dir) {
-		super(esq, dir, "<");
+	public ExpMaiorIgualQue(Expressao esq, Expressao dir) {
+		super(esq, dir, ">=");
 	}
 
 	/**
-	 * Retorna o valor da Expressao de MenorQue
+	 * Retorna o valor da Expressao de MaiorIgualQue
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return new ValorBooleano(
-			((ValorInteiro) getEsq().avaliar(amb)).valor() <
+			((ValorInteiro) getEsq().avaliar(amb)).valor() >=
 			((ValorInteiro) getDir().avaliar(amb)).valor() );
 	}
 
 	/**
-	 * Retorna o valor da Expressao Mutante de MenorQue
+	 * Retorna o valor da Expressao Mutante de MaiorIgualQue
 	 */
 	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return new ValorBooleano(
-				((ValorInteiro) getEsq().avaliar(amb)).valor() <=
+				((ValorInteiro) getEsq().avaliar(amb)).valor() >
 						((ValorInteiro) getDir().avaliar(amb)).valor() );
 	}
-
+	
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
@@ -57,7 +57,7 @@ public class ExpMenorQue extends ExpBinaria {
 		return TipoPrimitivo.BOOLEANO;
 	}
 	
-	public ExpMenorQue clone() {
-		return new ExpMenorQue(this.esq.clone(), this.dir.clone());
+	public ExpMaiorIgualQue clone() {
+		return new ExpMaiorIgualQue(this.esq.clone(), this.dir.clone());
 	}
 }

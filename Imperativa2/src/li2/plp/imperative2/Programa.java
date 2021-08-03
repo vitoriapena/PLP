@@ -38,26 +38,26 @@ public class Programa {
 		return ambiente.getSaida();
 	}
 
-//	/**
-//	 * Muta o programa.
-//	 *
-//	 * @param ambiente
-//	 *            o ambiente de execu��o.
-//	 *
-//	 * @return o ambiente depois da operação de mutação.
-//	 * @throws ErroTipoEntradaException
-//	 *
-//	 * @exception EntradaNaoFornecidaException
-//	 *                se n�o for fornecida a tail de valores de entrada do
-//	 *                programa.
-//	 *
-//	 */
-//	public ListaValor mutar(AmbienteExecucaoImperativa ambiente)
-//			throws IdentificadorJaDeclaradoException,
-//			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
-//		ambiente = comando.mutar(ambiente);
-//		return ambiente.getSaida();
-//	}
+	/**
+	 * Muta o programa.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o.
+	 *
+	 * @return o ambiente depois da operação de mutação.
+	 * @throws ErroTipoEntradaException
+	 *
+	 * @exception EntradaNaoFornecidaException
+	 *                se n�o for fornecida a tail de valores de entrada do
+	 *                programa.
+	 *
+	 */
+	public ListaValor mutar(AmbienteExecucaoImperativa ambiente)
+			throws IdentificadorJaDeclaradoException,
+			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+		ambiente = comando.mutar(ambiente);
+		return ambiente.getSaida();
+	}
 
 	/**
 	 * Realiza a verificacao de tipos do programa

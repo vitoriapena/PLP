@@ -34,6 +34,16 @@ public class ExpAnd extends ExpBinaria{
 					((ValorBooleano)getDir().avaliar(amb)).valor()
 		);
 	}
+
+	/**
+	 * Retorna o valor da Expressao de Conjuncao Logica
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		return new ValorBooleano(
+				((ValorBooleano)getEsq().avaliar(amb)).valor() &&
+						((ValorBooleano)getDir().avaliar(amb)).valor()
+		);
+	}
  
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
