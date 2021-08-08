@@ -50,6 +50,13 @@ public abstract class ValorConcreto<T> implements Valor {
 	}
 
 	/**
+	 * Retorna o valor deste valor primitivo, i.e, ele mesmo.
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) {
+		return this;
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao. Ser&aacute; sempre
 	 * v&aacute;lida.
 	 * 

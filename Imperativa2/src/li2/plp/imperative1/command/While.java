@@ -42,6 +42,27 @@ public class While implements Comando {
 	}
 
 	/**
+	 * Implementa o comando <code>while</code>.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o.
+	 *
+	 * @return o ambiente depois de modificado pela execu��o do comando
+	 *         <code>while</code>.
+	 * @throws ErroTipoEntradaException
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws IdentificadorJaDeclaradoException,
+			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+		while (((ValorBooleano) expressao.avaliarMutante(ambiente)).valor()) {
+			ambiente = comando.mutar(ambiente);
+		}
+		return ambiente;
+	}
+
+	/**
 	 * Realiza a verificacao de tipos da express�o e dos comandos do comando
 	 * <code>while</code>
 	 * 

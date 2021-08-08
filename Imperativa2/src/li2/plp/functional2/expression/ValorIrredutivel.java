@@ -15,6 +15,11 @@ public class ValorIrredutivel implements Valor {
 		return null;
 	}
 
+	public Valor avaliarMutante(AmbienteExecucao amb)
+			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		return null;
+	}
+
 	public boolean checaTipo(AmbienteCompilacao amb)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return true;

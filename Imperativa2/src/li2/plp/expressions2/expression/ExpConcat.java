@@ -37,6 +37,16 @@ public class ExpConcat extends ExpBinaria{
 	}
 
 	/**
+	 * Retorna o valor da Expressao mutada de Concatenacao
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		return new ValorString(
+				( (ValorString) getEsq().avaliarMutante(amb)).valor() +
+						( (ValorString) getDir().avaliarMutante(amb)).valor()
+		);
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param ambiente o ambiente de compila��o.

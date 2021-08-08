@@ -24,6 +24,11 @@ public class Id implements Expressao {
 		return ambiente.get(this);
 	}
 
+	public Valor avaliarMutante(AmbienteExecucao ambiente)
+			throws VariavelNaoDeclaradaException {
+		return ambiente.get(this);
+	}
+
 	/**
 	 * Realiza a verificacao de tipos desta expressao. Ser&aacute; v&aacute;lida
 	 * se o identificador estiver declarado.

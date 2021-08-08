@@ -35,6 +35,15 @@ public class ExpOr extends ExpBinaria {
 	}
 
 	/**
+	 * Retorna o valor da Expressao mutada de disjuncao logica
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		return new ValorBooleano(
+				((ValorBooleano)getEsq().avaliarMutante(amb)).valor() ||
+						((ValorBooleano)getDir().avaliarMutante(amb)).valor() );
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param ambiente o ambiente de compila��o.

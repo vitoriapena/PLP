@@ -113,7 +113,6 @@ public class MultiInterpretador {
 		try {
 			ByteArrayInputStream fis = new ByteArrayInputStream(sourceCode.getBytes());
 
-
 			switch (selectedIndex) {
 				case EXP1:
 					interpretarExp1(fis);
@@ -143,21 +142,6 @@ public class MultiInterpretador {
 					interpretarOO2(fis, listaEntrada);
 			}
 
-
-//			switch (listaEntrada) {
-//				case ">":
-//					sourceCode = sourceCode.replaceAll(">","<");
-//					break;
-//				case "<":
-//					sourceCode = sourceCode.replaceAll("<",">");
-//					break;
-//				case "<=":
-//					sourceCode = sourceCode.replaceAll("<=",">=");
-//					break;
-//				case ">=":
-//					sourceCode = sourceCode.replaceAll(">=","<=");
-//			}
-
 		} catch (Exception e1) {
 			messageBoard.setText(e1.getMessage());
 			e1.printStackTrace();
@@ -166,7 +150,6 @@ public class MultiInterpretador {
 			t.printStackTrace();
 		}
 
-		messageBoard.append(sourceCode);
 	}
 
 	private void interpretarExp1(InputStream fis) throws ParseException {

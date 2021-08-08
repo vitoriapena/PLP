@@ -22,6 +22,20 @@ public class Skip implements Comando {
 	}
 
 	/**
+	 * N�o realiza nenhuma altera��o no ambiente.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o mutado.
+	 *
+	 * @return o ambiente inalterado.
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente) {
+		return ambiente;
+	}
+
+	/**
 	 * Realiza a verificacao de tipos do comando
 	 * 
 	 * @param ambiente

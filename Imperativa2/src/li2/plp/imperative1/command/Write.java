@@ -32,6 +32,23 @@ public class Write implements IO {
 	}
 
 	/**
+	 * Escreve na saida padr�o.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o.
+	 *
+	 * @return o ambiente depois de modificado pela mutação do comando
+	 *         <code>write</code>.
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws VariavelJaDeclaradaException, VariavelNaoDeclaradaException {
+		ambiente.write(expressao.avaliarMutante(ambiente));
+		return ambiente;
+	}
+
+	/**
 	 * Realiza a verificacao de tipos da express�o a ser escrita na pelo comando
 	 * <code>write</code>
 	 * 

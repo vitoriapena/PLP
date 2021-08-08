@@ -39,6 +39,17 @@ public class ExpEquals extends ExpBinaria {
 	}
 
 	/**
+	 * Retorna o valor da Expressao mutada de Igualdade
+	 */
+	@SuppressWarnings("unchecked")
+	public Valor avaliarMutante(AmbienteExecucao amb)
+			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		ValorConcreto esq = (ValorConcreto) getEsq().avaliarMutante(amb);
+		ValorConcreto dir = (ValorConcreto) getDir().avaliarMutante(amb);
+		return new ValorBooleano(esq.isEquals(dir));
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 * 
 	 * @param ambiente

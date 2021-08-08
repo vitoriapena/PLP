@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Funcional1" />
+        <module name="Funcional2" />
+        <module name="Objetos1" />
+        <module name="Applet" />
+        <module name="Expressoes1" />
+        <module name="Funcional3" />
+        <module name="Expressoes2" />
+        <module name="Imperativa1" />
+        <module name="Imperativa2" />
+        <module name="Objetos2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Applet" target="1.8" />
+      <module name="Expressoes1" target="1.8" />
+      <module name="Expressoes2" target="1.8" />
+      <module name="Funcional1" target="1.8" />
+      <module name="Funcional2" target="1.8" />
+      <module name="Funcional3" target="1.8" />
+      <module name="Imperativa1" target="1.8" />
+      <module name="Imperativa2" target="1.8" />
+      <module name="Objetos1" target="1.8" />
+      <module name="Objetos2" target="1.8" />
+      <module name="plp" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

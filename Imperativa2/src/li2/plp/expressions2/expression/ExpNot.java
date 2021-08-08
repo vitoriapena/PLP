@@ -37,6 +37,19 @@ public class ExpNot extends ExpUnaria{
 	}
 
 	/**
+	 * Retorna o valor da Expressao de negacao logica.
+	 *
+	 * @param amb o ambiente de execu��o.
+	 * @return o valor da expressão mutada avaliada.
+	 * @exception VariavelNaoDeclaradaException se a vari�vel n�o est�
+	 *            declarada no ambiente.
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelJaDeclaradaException,
+			VariavelNaoDeclaradaException {
+		return new ValorBooleano(!((ValorBooleano) getExp().avaliarMutante(amb)).valor());
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 * 
 	 * @param amb o ambiente de compila��o.

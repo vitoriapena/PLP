@@ -35,6 +35,23 @@ public class SequenciaComando implements Comando {
 	}
 
 	/**
+	 * Executa os comandos sequencialmente.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o.
+	 *
+	 * @return o ambiente depois de modificado pela mutação dos comandos.
+	 * @throws ErroTipoEntradaException
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws IdentificadorJaDeclaradoException,
+			IdentificadorNaoDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+		return comando2.mutar(comando1.mutar(ambiente));
+	}
+
+	/**
 	 * Realiza a verificacao de tipos dos comandos
 	 * 
 	 * @param ambiente

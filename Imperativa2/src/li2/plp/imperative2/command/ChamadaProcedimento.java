@@ -52,6 +52,29 @@ public class ChamadaProcedimento implements Comando {
 
 	}
 
+	public AmbienteExecucaoImperativa mutar(AmbienteExecucaoImperativa amb)
+			throws IdentificadorNaoDeclaradoException,
+			IdentificadorJaDeclaradoException, EntradaVaziaException, ErroTipoEntradaException {
+		AmbienteExecucaoImperativa2 ambiente = (AmbienteExecucaoImperativa2) amb;
+		DefProcedimento procedimento = ambiente
+				.getProcedimento(nomeProcedimento);
+
+		/*
+		 * o incrementa e o restaura neste ponto servem para criar as variveis
+		 * que serao utilizadas pela execucao do procedimento
+		 */
+		ambiente.incrementa();
+		ListaDeclaracaoParametro parametrosFormais = procedimento
+				.getParametrosFormais();
+		AmbienteExecucaoImperativa2 aux = bindParameters(ambiente,
+				parametrosFormais);
+		aux = (AmbienteExecucaoImperativa2) procedimento.getComando().mutar(
+				aux);
+		aux.restaura();
+		return aux;
+
+	}
+
 	/**
 	 * insere no contexto o resultado da associacao entre cada parametro formal
 	 * e seu correspondente parametro atual

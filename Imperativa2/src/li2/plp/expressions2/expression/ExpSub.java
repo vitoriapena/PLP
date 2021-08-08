@@ -35,6 +35,16 @@ public class ExpSub extends ExpBinaria {
 	}
 
 	/**
+	 * Retorna o valor da Expressao mutada de Subtracao.
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+		return new ValorInteiro(
+				((ValorInteiro)getEsq().avaliarMutante(amb)).valor() -
+						((ValorInteiro)getDir().avaliarMutante(amb)).valor()
+		);
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param ambiente o ambiente de compila��o.

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Applet/Applet.iml" filepath="$PROJECT_DIR$/Applet/Applet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expressoes1/Expressoes1.iml" filepath="$PROJECT_DIR$/Expressoes1/Expressoes1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expressoes2/Expressoes2.iml" filepath="$PROJECT_DIR$/Expressoes2/Expressoes2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Funcional1/Funcional1.iml" filepath="$PROJECT_DIR$/Funcional1/Funcional1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Funcional2/Funcional2.iml" filepath="$PROJECT_DIR$/Funcional2/Funcional2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Funcional3/Funcional3.iml" filepath="$PROJECT_DIR$/Funcional3/Funcional3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Imperativa1/Imperativa1.iml" filepath="$PROJECT_DIR$/Imperativa1/Imperativa1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Imperativa2/Imperativa2.iml" filepath="$PROJECT_DIR$/Imperativa2/Imperativa2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Objetos1/Objetos1.iml" filepath="$PROJECT_DIR$/Objetos1/Objetos1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Objetos2/Objetos2.iml" filepath="$PROJECT_DIR$/Objetos2/Objetos2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plp.iml" filepath="$PROJECT_DIR$/plp.iml" />
+    </modules>
+  </component>
+</project>

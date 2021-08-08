@@ -36,6 +36,23 @@ public class Atribuicao implements Comando {
 	}
 
 	/**
+	 * Executa a atribui��o.
+	 *
+	 * @param ambiente
+	 *            o ambiente que contem o mapeamento entre identificadores e
+	 *            valores.
+	 *
+	 * @return o ambiente modificado pela mutação da atribui��o.
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws VariavelJaDeclaradaException, VariavelNaoDeclaradaException {
+		ambiente.changeValor(id, expressao.avaliarMutante(ambiente));
+		return ambiente;
+	}
+
+	/**
 	 * Um comando de atribui��o est� bem tipado, se o tipo do identificador � o
 	 * mesmo da express�o. O tipo de um identificador � determinado pelo tipo da
 	 * express�o que o inicializou (na declara��o).

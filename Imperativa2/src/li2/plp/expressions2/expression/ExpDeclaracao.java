@@ -34,6 +34,18 @@ public class ExpDeclaracao implements Expressao {
 		return result;
 	}
 
+	public Valor avaliarMutante(AmbienteExecucao ambiente)
+			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+
+		ambiente.incrementa();
+		Map<Id, Valor> resolvedValues = resolveValueBindings(ambiente);
+		includeValueBindings(ambiente, resolvedValues);
+		Valor result = expressao.avaliarMutante(ambiente);
+		ambiente.restaura();
+
+		return result;
+	}
+
 	private void includeValueBindings(AmbienteExecucao ambiente,
 			Map<Id, Valor> resolvedValues) throws VariavelJaDeclaradaException {
 		for (Id id : resolvedValues.keySet()) {

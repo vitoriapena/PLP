@@ -48,6 +48,36 @@ public class Read implements IO {
 	}
 
 	/**
+	 * L� da entrada padr�o.
+	 *
+	 * @param ambiente
+	 *            o ambiente de execu��o.
+	 *
+	 * @return o ambiente depois de modificado pela mutação do comando read.
+	 * @throws ErroTipoEntradaException
+	 *
+	 */
+	public AmbienteExecucaoImperativa mutar(
+			AmbienteExecucaoImperativa ambiente)
+			throws VariavelJaDeclaradaException, VariavelNaoDeclaradaException,
+			EntradaVaziaException, ErroTipoEntradaException {
+
+		Valor valorID = ambiente.get(id);
+		Valor valorRead =ambiente.read();
+		if (valorID.getTipo(null).eIgual(valorRead.getTipo(null))) {
+			ambiente.changeValor(id, valorRead );
+		}else{
+			throw new ErroTipoEntradaException("Tipo do valor de entrada lido incomp�tivel" +
+					" com tipo da vari�vel (" + id.getIdName() + ")");
+		}
+
+
+
+
+		return ambiente;
+	}
+
+	/**
 	 * Realiza a verificacao de tipos da entrada
 	 * 
 	 * @param ambiente

@@ -39,6 +39,21 @@ public class ExpLength extends ExpUnaria {
 	}
 
 	/**
+	 * Retorna o valor da Expressao de tamanho.
+	 *
+	 * @param amb o ambiente de execu��o.
+	 * @return o valor da express�o avaliada.
+	 * @exception VariavelNaoDeclaradaException se existir um identificador
+	 *          nao declarado no ambiente.
+	 * @exception VariavelNaoDeclaradaException se existir um identificador
+	 *          declarado mais de uma vez no mesmo bloco do ambiente.
+	 */
+	public Valor avaliarMutante(AmbienteExecucao amb) throws VariavelJaDeclaradaException,
+			VariavelNaoDeclaradaException {
+		return new ValorInteiro (((ValorString)getExp().avaliarMutante(amb)).valor().length());
+	}
+
+	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 * 
 	 * @param amb o ambiente de compila��o.
